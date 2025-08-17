@@ -12,7 +12,7 @@ export const DeleteIcon = ({ size, contentId }: SizeStyles) => {
 
         axios.request({
             method: 'DELETE',
-            url: `${BACKEND_URL}api/tasks/deletetasks`,
+            url: `${BACKEND_URL}/api/tasks/deletetasks`,
             headers: {
                 Authorization: localStorage.getItem("token") || ""
             },
