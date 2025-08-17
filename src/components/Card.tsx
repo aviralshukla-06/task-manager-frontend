@@ -29,7 +29,7 @@ export function Card(props: CardProps) {
 
     return (
         // added bg based on filter 
-        <div className={`bg-white ${filter == true ? "bg-[#a0f8a0]" : "bg-[#f3ee63]"} rounded-md shadow-md w-72 h-96 mx-4 mt-6 border border-black flex flex-col`}>
+        <div className={`${filter == true ? "bg-[#a0f8a0]" : "bg-[#f3ee63]"} rounded-md shadow-md w-72 h-96 mx-4 mt-6 border border-black flex flex-col`}>
             <div className="hidden absolute">
                 <SideBar filter={filter} />
             </div>

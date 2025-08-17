@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom"
 
 
 type SideBarProps = {
-    onAddTask: () => void;
+    onAddTask?: () => void;
+    filter?: boolean
 };
 
 export const SideBar = ({ onAddTask }: SideBarProps) => {
