@@ -15,10 +15,6 @@ export const SideBar = ({
     totalTasks = 0,
     completedTasks = 0,
 }: SideBarProps) => {
-
-
-
-
     const navigateTo = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -32,18 +28,21 @@ export const SideBar = ({
 
     return (
         <>
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle - Shows Menu when closed, Cross when open */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden fixed top-4 left-4 z-[9999] p-3  rounded-xl shadow-md"
+                className={`lg:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl shadow-lg transition-all duration-300 ${isOpen ? 'bg-red-500 hover:bg-red-600' : 'bg-purple-600 hover:bg-purple-700'
+                    }`}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
             >
                 <svg
-                    className="w-6 h-6 bg-inherit text-white"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                 >
                     {isOpen ? (
+                        // Cross Icon when sidebar is open
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -51,6 +50,7 @@ export const SideBar = ({
                             d="M6 18L18 6M6 6l12 12"
                         />
                     ) : (
+                        // Menu Icon when sidebar is closed
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -72,16 +72,16 @@ export const SideBar = ({
             {/* Sidebar */}
             <aside
                 className={`fixed top-0 left-0 h-full w-72 lg:w-80 
-        bg-gradient-to-b from-purple-600/90 to-pink-600/90 
-        backdrop-blur-xl shadow-2xl border-r border-white/10
-        flex flex-col justify-between
-        transition-transform duration-300 ease-in-out z-50
-        ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+                    bg-gradient-to-b from-purple-600/90 to-pink-600/90 
+                    backdrop-blur-xl shadow-2xl border-r border-white/10
+                    flex flex-col justify-between
+                    transition-transform duration-300 ease-in-out z-50
+                    ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
             >
                 {/* Sidebar content */}
                 <div className="flex flex-col h-full p-8 overflow-y-auto">
                     {/* Header */}
-                    <div className="flex ml-10 items-center gap-3 mb-10">
+                    <div className="flex items-center gap-3 mb-10 ml-10 lg:ml-0">
                         <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                             <TargetIcon className="w-7 h-7 text-purple-600" />
                         </div>
@@ -176,9 +176,9 @@ export const SideBar = ({
                             setIsOpen(false);
                         }}
                         className="flex items-center justify-center gap-3 px-6 py-4 
-              bg-white text-purple-600 rounded-2xl font-semibold
-              hover:bg-purple-50 transition-all duration-300
-              shadow-md hover:shadow-xl hover:scale-[1.03]"
+                            bg-white text-purple-600 rounded-2xl font-semibold
+                            hover:bg-purple-50 transition-all duration-300
+                            shadow-md hover:shadow-xl hover:scale-[1.03]"
                     >
                         <PlusIcon className="w-6 h-6" />
                         <span>Add Task</span>
@@ -193,8 +193,8 @@ export const SideBar = ({
                     <button
                         onClick={logout}
                         className="w-full flex items-center justify-center gap-2 px-5 py-3 
-                                     bg-white/10 text-white rounded-xl font-medium
-                                         hover:bg-red-500/50 transition-all duration-300 border border-white/20"
+                            bg-white/10 text-white rounded-xl font-medium
+                            hover:bg-red-500/50 transition-all duration-300 border border-white/20"
                     >
                         <LogoutIcon className="w-5 h-5" />
                         <span className="text-sm">Logout</span>

@@ -74,9 +74,8 @@ export function Dashboard() {
                 </div>
 
                 {/* Sidebar */}
-                <div className="w-[20%] fixed top-0 left-0 h-screen">
-                    <SideBar onAddTask={() => setModalOpen(true)} />
-                </div>
+                <SideBar onAddTask={() => setModalOpen(true)} />
+
 
                 {/* Main Section */}
                 <div className="flex-1 ml-[20%] relative overflow-y-auto">
