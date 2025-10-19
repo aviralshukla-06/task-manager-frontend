@@ -35,10 +35,10 @@ export const SideBar = ({
             {/* Mobile Menu Toggle */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden fixed top-4 left-4 z-50 p-3 bg-purple-600 rounded-xl shadow-md"
+                className="lg:hidden fixed top-4 left-4 z-[9999] p-3  rounded-xl shadow-md"
             >
                 <svg
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 bg-inherit text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export const SideBar = ({
                 {/* Sidebar content */}
                 <div className="flex flex-col h-full p-8 overflow-y-auto">
                     {/* Header */}
-                    <div className="flex items-center gap-3 mb-10">
+                    <div className="flex ml-10 items-center gap-3 mb-10">
                         <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                             <TargetIcon className="w-7 h-7 text-purple-600" />
                         </div>

@@ -23,9 +23,9 @@ export const CardHeader = ({
             {/* Left Section — Greeting */}
             <div className="flex items-center gap-4">
                 {/* Profile Icon */}
-                <div className="hidden sm:flex items-center justify-center w-14 h-14 bg-white/20 rounded-2xl border border-white/30">
-                    {/* {profileIcon || <UserIcon className="w-8 h-8 text-white" />} */}
-                </div>
+                {/* <div className="hidden sm:flex items-center justify-center w-14 h-14 bg-white/20 rounded-2xl border border-white/30">
+                 
+                </div> */}
 
                 {/* Text Content */}
                 <div>
